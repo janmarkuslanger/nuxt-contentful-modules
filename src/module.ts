@@ -2,7 +2,9 @@ import { fileURLToPath } from 'url'
 import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
 
 export interface ModuleOptions {
-  addPlugin: boolean
+  addPlugin: boolean;
+  space: string;
+  accessToken: string;
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -11,7 +13,9 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: 'nuxtContentfulModule'
   },
   defaults: {
-    addPlugin: true
+    addPlugin: true,
+    space: '',
+    accessToken: '',
   },
   setup (options, nuxt) {
     if (options.addPlugin) {
